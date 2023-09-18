@@ -9,8 +9,8 @@ Description of my projects
 
     In this project, I create a user interface, where: 
     
-    - User submits the text 
+    - The user submits text 
     
-    - By clicking the "Show stats" button, the number of words in text provided appears.
+    - By clicking the "Show stats" button, the number of words in the text provided appears.
 
 
