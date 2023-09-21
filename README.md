@@ -4,6 +4,10 @@ Here, I store some fun Java projects. Check them out!
 Description of my projects
 ---------------------------
 
+-> Snake:
+
+    The Snake project feautures a GUI implementation of the classic Snake Game. 
+
 
 -> WordCountUI: 
 
@@ -12,5 +16,6 @@ Description of my projects
     - The user submits text 
     
     - By clicking the "Show stats" button, the number of words in the text provided appears.
+
 
 
