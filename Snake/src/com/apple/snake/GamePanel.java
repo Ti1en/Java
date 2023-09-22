@@ -35,8 +35,9 @@ public class GamePanel extends JPanel implements ActionListener {
 	Timer timer;
 	
 	
-	JButton restart = new JButton("Restart");
+	
 
+	
 	
 	
 	//Snake
@@ -52,6 +53,8 @@ public class GamePanel extends JPanel implements ActionListener {
 	int appleY;
 	Point apple;
 	
+	JButton restart = new JButton("Restart");
+	
 	///////////////////////////////////////////////////
 	
 	GamePanel(){
@@ -61,6 +64,8 @@ public class GamePanel extends JPanel implements ActionListener {
 		this.addKeyListener(new MyKeyAdapter());
 		startGame();
 
+		restart.addActionListener(e -> restartGame());
+
 	}
 	
 	public void startGame() {
@@ -68,6 +73,20 @@ public class GamePanel extends JPanel implements ActionListener {
 		running = true;
 		timer = new Timer(DELAY, this);
 		timer.start();
+	}
+	
+	public void restartGame() {
+		if(!running) {
+			x[0] = 0;
+			y[0] = 0;
+			right = true;
+			left = false;
+			up = false;
+			down = false;
+			bodyUnits = 3;
+			applesEaten = 0;
+			startGame();
+		}
 	}
 	
 	
@@ -96,6 +115,7 @@ public class GamePanel extends JPanel implements ActionListener {
 			g.setFont(new Font("Arial", Font.BOLD, 30));
 			FontMetrics metrics = getFontMetrics(g.getFont());
 			g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: " + applesEaten))/2, g.getFont().getSize());
+			this.remove(restart);
 		}
 		else {
 			gameOver(g);
@@ -113,9 +133,14 @@ public class GamePanel extends JPanel implements ActionListener {
 		FontMetrics metrics = getFontMetrics(g.getFont());
 		g.drawString("Game Over", (SCREEN_WIDTH - metrics.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
 	
+		this.add(restart);
+		restart.setBounds(SCREEN_WIDTH/2-40, 3*(SCREEN_HEIGHT-30)/4, 80, 30);
+		this.revalidate();
+		this.repaint();
 	}
 	
 	
+
 	
 	//SNAKE FUNCTIONALITY 
 	 

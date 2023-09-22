@@ -6,7 +6,7 @@ Description of my projects
 
 -> Snake:
 
-    The Snake project feautures a GUI implementation of the classic Snake Game. 
+    The Snake project features a GUI implementation of the classic Snake Game. 
 
 
 -> WordCountUI: 
