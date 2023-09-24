@@ -77,8 +77,11 @@ public class GamePanel extends JPanel implements ActionListener {
 	
 	public void restartGame() {
 		if(!running) {
-			x[0] = 0;
-			y[0] = 0;
+			for(int i=0; i<x.length; i++) {
+				x[i] = 0;
+				y[i]=0;
+			}
+
 			right = true;
 			left = false;
 			up = false;
